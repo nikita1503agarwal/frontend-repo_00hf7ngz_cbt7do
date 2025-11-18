@@ -37,25 +37,42 @@ export default function Hero({ onCtaClick }) {
               </a>
             </motion.div>
 
-            <div className="mt-8 flex items-center gap-6 text-blue-200/90">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-8 flex items-center gap-6 text-blue-200/90"
+            >
               <div className="flex -space-x-2">
                 {[0,1,2,3].map(i => (
                   <img key={i} src={`https://i.pravatar.cc/40?img=${i+5}`} alt="client" className="w-8 h-8 rounded-full border-2 border-slate-900" />
                 ))}
               </div>
               <p className="text-sm">Trusted by 120+ startups and category leaders</p>
-            </div>
+            </motion.div>
           </div>
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, delay: 0.15 }}
             className="relative"
           >
-            <img src="https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTRU8lMjBkYXNoYm9hcmR8ZW58MHwwfHx8MTc2MzQ1MTA4MHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80" alt="SEO dashboard" className="rounded-xl shadow-2xl border border-white/10" />
-            <div className="absolute -bottom-6 -left-6 bg-slate-800/80 backdrop-blur rounded-xl p-4 border border-white/10">
+            <motion.img 
+              initial={{ scale: 0.98 }} 
+              whileHover={{ scale: 1.01 }} 
+              transition={{ duration: 0.3 }}
+              src="https://images.unsplash.com/photo-1686061594225-3e92c0cd51b0?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxTRU8lMjBkYXNoYm9hcmR8ZW58MHwwfHx8MTc2MzQ1MTA4MHww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80" alt="SEO dashboard" className="rounded-xl shadow-2xl border border-white/10" />
+            <motion.div 
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="absolute -bottom-6 -left-6 bg-slate-800/80 backdrop-blur rounded-xl p-4 border border-white/10"
+            >
               <p className="text-xs text-blue-100">Average 132% organic growth in 6 months</p>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
